@@ -1,0 +1,19 @@
+{
+  "name": "node_start",
+  "version": "1.0.0",
+  "description": "Intro to Node.js & NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "Node",
+    "Start"
+  ],
+  "author": "Runyard, John",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "moment": "^2.27.0"
+  }
+}
