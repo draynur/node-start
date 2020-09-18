@@ -1,26 +1,26 @@
-const express = require('express');
-const path = require('path')
-const port = 8080;
+const express = require('express'); // JS Framework
+const path = require('path'); // File/Folder path name builder
+const port = 8080; // port we are listening to
+const app = express(); // initalizing express
 
-const app = express();
+/* 
+REQUEST & RESPONSE are the built-in node.js request and response objects.
+Request - the users request to the server and contains some user information (if given)
+Response - what the server will give back to the user, in most cases just a .html file.
+*/
 
-// How to handle get request
+// ROUTES!
+
+// Setting base or default path
 app.get('/', (request, response) => {
-    console.log(request.url);
     response.sendFile(path.join(__dirname + '/public/views/index.html'));
 })
 
-// How to handle post request
-app.post('/user', (request, response) => {
-    response.send('Got a PUT request @/user') 
-})
-
-app.put('/user'), (request, response) => {
-    response.send('Got a POST request @/user')
-}
-
-app.delete('/user', (request, response) => {
-    response.send('Got a DELETE request @/user')
+// Get member view by member name
+// :member will bind to request.params.member
+app.get('/member/:member', (request, response) => {
+    // console.log(response);
+    response.sendFile(path.join(__dirname + '/public/views/'+request.params.member+'.html'))
 })
 
 // ACTION!
